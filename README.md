@@ -78,3 +78,7 @@ En la web principal, si iniciamos sesión con los siguientes credenciales:
 - **Contraseña:** `password` 🔑
 
 Y luego presionamos la combinación de teclas: **`a`, `a`, `7`, `3`**, seremos redirigidos a una página donde se mostrarán los mensajes de contacto almacenados en la base de datos.
+
+<p align="center">
+    <img src="https://www.gifsanimados.org/data/media/90/fuego-imagen-animada-0419.gif" alt="Fuego" width="100%" height="100"><br>
+</p>
