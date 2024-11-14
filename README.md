@@ -13,7 +13,7 @@
 ## Descripción 📝
 
 ¡Hola! 👋
-Este repositorio es para un trabajo que realicé, consistente en crear mi propio portafolio web (basado en que estamos en 2028). 🚀
+Este repositorio es para un trabajo que realicé, consiste en crear mi propio portafolio web (basado en que estamos en 2028). 🚀
 
 ### Cosas a tener en cuenta:
 - He ocultado información privada como correos, números de teléfono, etc. 🔒
