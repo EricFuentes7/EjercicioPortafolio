@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/cookies.css">
+
+    <title>Eric Of Crypto - Proj</title>
+    <meta charset="utf-8" />
+
+    <link rel="icon" type="image/png" href="/images/newcoin.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <style>
+      /* Estilo para los contenedores de los proyectos */
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          margin-top: 100px;
+      }
+
+      /* Estilo para cada tarjeta de proyecto */
+      .project-card {
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+          width: 90%;
+          max-width: 800px;
+          overflow: hidden;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Imagen del proyecto */
+      .project-card img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+      }
+
+      /* Contenido del proyecto */
+      .project-card-content {
+          padding: 15px;
+          font-family: 'Questrial', sans-serif;
+      }
+
+      .project-card-content h3 {
+          font-size: 52px;
+          margin: 0;
+          margin-bottom: 10px;
+          color: #0b0b0b;
+      }
+
+      .project-card-content p {
+          font-size: 26px;
+          color: #444;
+      }
+
+      /* Botón para ver más detalles */
+      .view-project-btn {
+          display: inline-block;
+          background-color: #9874d4;
+          color: white;
+          padding: 10px 20px;
+          margin-top: 10px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-size: 26px;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .view-project-btn:hover {
+          background-color: #764ab7;
+      }
+      .rojo {
+          display: inline-block;
+          background-color: #ff0000;
+          color: white;
+          padding: 10px 20px;
+          margin-top: 10px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-size: 26px;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .rojo:hover {
+          background-color: #ff0000;
+      }
+
+      html {
+          scroll-behavior: smooth;
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff;
+          background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(235, 235, 235) 90%);
+      }
+
+      body {
+          overflow: auto; /* Permitir el scroll */
+          margin: 0;
+      }
+
+      nav {
+          height: 60px;
+          width: 95%;
+          background-color: #8d8d8d00;
+          text-align: center;
+          display: flex;
+          justify-content: space-between;
+          margin-left: 10px;
+          margin-right: 10px;
+      }
+
+      nav ul {
+          list-style: none;
+          font-family: 'Questrial', sans-serif;
+      }
+
+      nav ul li {
+          float: left;
+      }
+
+      nav ul li a.izq {
+          color: #0b0b0b;
+          font-weight: 100;
+          text-decoration: none;
+          font-size: 20px;
+          padding: 18px;
+          border-radius: 10px;
+      }
+
+      nav ul li a.izq:hover {
+          color: #fcfcfc;
+          background-color: #9874d4;
+          border-radius: 30px;
+          transition: all .35s ease-in-out;
+      }
+
+      nav ul li a.der {
+          color: #fcfcfc;
+          font-weight: 600;
+          text-decoration: none;
+          font-size: 20px;
+          padding: 18px;
+          background-color: #0b0b0b;
+          border-radius: 30px;
+      }
+
+      nav ul li a.der:hover {
+          background-color: #9874d4;
+          transition: all .35s ease-in-out;
+      }
+
+      .logo {
+          width: 250px;
+      }
+
+      /* Estilos del menú desplegable */
+      .dropdown {
+          position: relative;
+          display: inline-block;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 180px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          border-radius: 10px;
+      }
+
+      .dropdown-content li {
+          list-style: none;
+          height: 40px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+      }
+
+      .dropdown-content li a {
+          color: #0b0b0b;
+          padding: 12px;
+          text-decoration: none;
+          display: block;
+          font-size: 18px;
+          font-family: 'Questrial', sans-serif;
+          border-radius: 10px;
+      }
+
+      .dropdown-content li a:hover {
+          background-color: #9874d4;
+          color: #fcfcfc;
+          border-radius: 30px;
+          transition: all .35s ease-in-out;
+      }
+
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      /* Estilos para dispositivos móviles */
+      .menu-toggle {
+          display: none;
+      }
+
+      @media (max-width: 980px) {
+          nav ul {
+              display: none;
+          }
+
+          .menu-toggle {
+              display: block;
+              background-color: transparent;
+              border: none;
+              color: #0b0b0b;
+              font-size: 30px;
+              cursor: pointer;
+              width: 30px;
+              margin-right: 60px;
+              padding-top: 15px;
+          }
+
+          .menu {
+              display: none;
+          }
+
+          .menu.open {
+              display: flex;
+              flex-direction: column;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100vw;
+              height: 100vh;
+              background-color: rgba(0, 0, 0, 0.95);
+              justify-content: center;
+              align-items: center;
+              z-index: 1000;
+              gap: 20px;
+              overflow-y: auto;
+          }
+
+          .menu.open a {
+              color: #fcfcfc;
+              font-size: 60px;
+              text-decoration: none;
+              padding: 10px 20px;
+              border-radius: 10px;
+              transition: background-color 0.3s;
+          }
+
+          .menu.open a:hover {
+              background-color: #9874d4;
+          }
+
+          .logo {
+              width: 500px;
+              height: 120px;
+              margin: 25px auto;
+          }
+
+          .centr {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 90.5vh;
+              padding: 0 10px;
+              text-align: center;
+              overflow: auto;
+          }
+
+          .centr .nom {
+              font-size: 172px;
+              margin-top: 0;
+              line-height: 1.2;
+          }
+      }
+  </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <img src="/images/logo_cendrassos.png" class="logo" alt="Logo">
+        <!-- Botón del menú hamburguesa solo para móviles -->
+        <button id="menu-toggle" class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul id="menu" class="menu">
+            <li><a href="/index.html" class="izq">Principal</a></li>
+            <li><a href="/sobre-mi/index.html" class="izq">Sobre mí</a></li>
+            <li><a href="/curriculum/index.html" class="izq">Currículum</a></li>
+            <li class="dropdown">
+                <a href="#" class="izq">Projectes</a>
+                <ul class="dropdown-content">
+                    <li><a href="/starmoonfnf/index.html">FNFXS</a></li>
+                    <li><a href="/TBOI/index.html">TBOS</a></li>
+                    <li><a href="/otras/index.html">EL CANTANTE</a></li>
+                </ul>
+            </li>
+            <li><a href="/contacte/index.html" class="der">Contacte</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- Proyecto 1 -->
+    <div class="project-card">
+        <img src="/images/bueno.jpg" alt="TBOS">
+        <div class="project-card-content">
+            <h3>The binding of Starmoon</h3>
+            <p>The Binding of Starmoon revitalitza l'experiència original de The Binding of Isaac, oferint als jugadors una gran quantitat de contingut nou per descobrir. Aquest mod no només millora la diversió del joc, sinó que també fomenta la creativitat i la personalització de les experiències dels jugadors, convertint cada partida en una aventura única.</p>
+            <a href="#" class="view-project-btn">Descargar mod</a>
+        </div>
+    </div>
+
+    <!-- Proyecto 2 -->
+    <div class="project-card">
+        <img src="/images/sm.png" alt="FNF VS STARMOON">
+        <div class="project-card-content">
+            <h3>Friday Night Funkin' X Starmoon</h3>
+            <p>FNF X Starmoon combina una narrativa captivadora amb emocionants batalles de rap, tot emmarcat en un ambient musical original. La transformació de Starmoon i el naixement d'una nova amistat afegeixen profunditat a la història, fent que el mod sigui una experiència entretinguda i memorable per als fans de Friday Night Funkin'.</p>
+            <a href="#" class="rojo">CANCELAT</a>
+        </div>
+    </div>
+
+    <!-- Proyecto 3 -->
+    <div class="project-card">
+        <img src="/images/cant.jpeg" alt="El Cantante">
+        <div class="project-card-content">
+            <h3>El cantante</h3>
+            <p>Pròximament! Prepara't per a "El Cantant", el meu nou EP que sortirà el 2025. Aquesta col·lecció de sis cançons explora noves sonoritats i lletres impactants que no voldràs perdre't. També hi haurà una edició especial en CD amb cançons extra per a una experiència musical completa. No te'l perdis!</p>            <a href="#" class="view-project-btn">Proximament</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript para manejar el menú
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        
+        // Controlar el scroll del body
+        if (menu.classList.contains('open')) {
+            document.body.style.overflow = 'hidden'; // Desactivar scroll
+        } else {
+            document.body.style.overflow = 'auto'; // Activar scroll
+        }
+    });
+</script>
+
+</body>
+</html>

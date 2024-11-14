@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="getInfo">Obtener información</button>
+    <div id="sessionTime"></div>
+
+    <script>
+        // Temporizador para medir el tiempo de la sesión
+        let startTime = Date.now();
+
+        document.getElementById('getInfo').addEventListener('click', function() {
+            // Obtener información del navegador
+            var userAgent = navigator.userAgent;
+            var platform = navigator.platform;
+            var language = navigator.language;
+            var onlineStatus = navigator.onLine;
+            var cookiesEnabled = navigator.cookieEnabled;
+            var screenWidth = screen.width;
+            var screenHeight = screen.height;
+            var screenColorDepth = screen.colorDepth;
+            var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            var referrer = document.referrer; // Dirección de la página que enlazó a esta
+
+            // Obtener información del correo electrónico
+            var urlParams = new URLSearchParams(window.location.search);
+            var email = urlParams.get('email') || 'No proporcionado';
+            var referral = urlParams.get('ref') || 'No proporcionado';
+
+            // Tiempo transcurrido desde que se cargó la página
+            var elapsedTime = Date.now() - startTime;
+            var secondsElapsed = Math.floor(elapsedTime / 1000);
+            var minutesElapsed = Math.floor(secondsElapsed / 60);
+            var hoursElapsed = Math.floor(minutesElapsed / 60);
+
+            // Imprimir información en la consola
+            console.log('Información del navegador:');
+            console.log('User Agent:', userAgent);
+            console.log('Platform:', platform);
+            console.log('Language:', language);
+            console.log('Estado de Conexión:', onlineStatus ? 'Conectado' : 'Desconectado');
+            console.log('Cookies habilitadas:', cookiesEnabled);
+            console.log('Dimensiones de la pantalla:', `${screenWidth}x${screenHeight}`);
+            console.log('Profundidad de color de la pantalla:', screenColorDepth);
+            console.log('Zona Horaria:', timeZone);
+            console.log('Referrer:', referrer); // Muestra de dónde llegó el usuario
+
+            console.log('Información del correo electrónico:');
+            console.log('Email:', email);
+            console.log('Referencia:', referral);
+    
+            // Información adicional
+            console.log('Plataforma del navegador:', navigator.oscpu);
+    
+            // Mostrar el tiempo de sesión en el DOM
+            document.getElementById('sessionTime').innerText = 
+                `Tiempo en la página: ${hoursElapsed} horas, ${minutesElapsed % 60} minutos, ${secondsElapsed % 60} segundos`;
+
+            // Hacer una solicitud a un servidor para obtener la dirección IP (opcional)
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Dirección IP pública:', data.ip);
+                })
+                .catch(error => {
+                    console.error('Error al obtener la IP:', error);
+                });
+        });
+    </script>
+</body>
+</html>

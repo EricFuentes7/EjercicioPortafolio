@@ -1,0 +1,520 @@
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(235, 235, 235) 90%);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav { /* AQuí el que fem es modificar com es veu el navegador, per a que els "ul" de dins quedin amb un bon disseny*/
+  height: 60px;
+  width: 95%;
+  
+  background-color: #8d8d8d00;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  width: 734px !important;
+
+
+  
+}
+nav ul li {
+  float: left;
+  margin-top: 1px;
+}
+
+nav ul li a.izq {
+  color: #0b0b0b;
+  background-color: #ffffff00;
+  font-weight: 100;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 18px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+nav ul li a.izq:hover {
+  color: #fcfcfc;
+  background-color: #9874d4;
+  border-radius: 30px 30px 30px 30px;
+  transition: all .35s ease-in-out;
+}
+
+nav ul li a.der {
+  color: #fcfcfc;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 18px;
+  padding-left: 84px;
+  padding-right: 84px;
+  background-color: #0b0b0b;
+  border-radius: 30px 30px 30px 30px;
+}
+
+nav ul li a.der:hover {
+  background-color: #9874d4;
+  transition: all .35s ease-in-out;
+}
+
+.logo {
+  width: 250px;
+}
+
+.centr {
+  padding-top: 100px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Questrial', sans-serif;
+  color: #0b0b0b;
+}
+
+.nom {
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* Estilos del menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+
+  
+  
+}
+
+.dropdown-content li {
+  list-style: none;
+  height: 40px;
+  padding-top:5px;
+  padding-bottom:5px;
+
+}
+
+.dropdown-content li a {
+  color: #0b0b0b;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  font-family: 'Questrial', sans-serif;
+  border-radius: 10px;
+  width: 120px;
+}
+
+.dropdown-content li a:hover {
+  background-color: #9874d4;
+  color: #fcfcfc;
+  border-radius: 30px;
+  transition: all .35s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  width: 100px !important;
+  height: 150px;
+}
+
+footer {
+  font-size: 12px;
+  position: absolute;
+  font-family: 'Questrial', sans-serif;
+  bottom: 0;
+  width: 99%;
+  height: 80px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.modal { /* Aquí el que es fa es modificar el menú de la política de privacitat, fent que estigui de la forma en la que es veu, tot centrat i estructurat*/
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  font-family: 'Questrial', sans-serif;
+  margin: 1% auto;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 20px;
+}
+
+.close { /* MOdifiques com es veu el botó X de tancar */
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fa-brands {
+  color: #0b0b0b;
+}
+
+.medio {
+  padding-right: 10px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+
+/* Modal de l'inici de sessi´o, en aquest està el menñu per posar credencials d'admin */
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content2 {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Questrial', sans-serif;
+
+}
+
+.close2 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-group2 {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Questrial', sans-serif;
+
+}
+
+input[type="text"], /*Aquí estàn tots els inputs del modal, el de password i el de text, fem que quedi molt bé visualment */
+input[type="password"] {
+  font-family: 'Questrial', sans-serif;
+
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button2 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Questrial', sans-serif;
+
+}
+
+.submit-button2:hover {
+  background-color: #45a049;
+}
+
+.user-status2 {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  padding: 10px 15px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#usernameDisplay2 {
+  font-weight: bold;
+}
+
+.user-status2.admin #usernameDisplay2 {
+  color: red;
+}
+
+#admin-toggle2 {
+  background-color: #515a62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#admin-toggle2:hover {
+  background-color: #5a6268;
+}
+.menu{
+  width: 63.8%;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-toggle{
+  display: none;
+}
+.fa-bars{
+  font-size: 100px;
+  padding-top:20px;
+  
+}
+/* Responsive para pantallas pequeñas (móviles) */
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 980px) {
+  /* Ocultar el menú de navegación original */
+  nav ul {
+    display: none;
+    
+  }
+
+  /* Mostrar el botón del menú hamburguesa solo en móviles */
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #0b0b0b;
+    font-size: 30px;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 60px;
+    padding-top: 15px;
+
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /* Estilos para mostrar el menú cuando se abre (ocupa toda la pantalla) */
+  body.no-scroll {
+    overflow: hidden; /* Deshabilita el scroll en el cuerpo */
+  }
+  
+  .menu.open {
+    display: flex;
+    flex-direction: column !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Asegúrate de que ocupe todo el ancho */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;
+    overflow: hidden; /* Evita scroll dentro del menú */
+  }
+  
+  
+  body {
+    overflow: hidden; /* Evita scroll en el cuerpo */
+  }
+  
+  .menu.open li {
+    display: block;
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    padding-bottom: 50px;
+  }
+  
+  .menu.open a {
+    color: #fcfcfc;
+    font-size: 60px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .menu.open a:hover {
+    background-color: #9874d4;
+  }
+  
+  /* Asegurarse de que el logo se mantenga centrado */
+  .logo {
+    width: 500px;
+    height: 120px;
+    margin: 25px auto; /* Centrado */
+  }
+  
+  /* Asegúrate de que el menú toggle esté en un lugar apropiado */
+  .menu-toggle {
+    position: relative; /* Asegúrate de que esté en un lugar visible */
+    z-index: 2000; /* Colocarlo por encima del menú */
+  }
+  
+
+  /* Ajustar tamaño de "ERIC FUENTES" para que no sea tan grande en móvil */
+  .centr {
+    display: flex;                  /* Usar Flexbox */
+    flex-direction: column;        /* Alinear elementos en columna */
+    justify-content: center;       /* Centrar verticalmente */
+    align-items: center;           /* Centrar horizontalmente */
+    height: 90.5vh;                  /* Ocupa toda la altura de la pantalla */
+    padding: 0 10px;              /* Espaciado lateral */
+    text-align: center;            /* Alinear texto al centro */
+  }
+
+  .centr .nom {
+    font-size: 172px;              /* Disminuir el tamaño del nombre */
+    margin-top: 00px;                /* Eliminar margen superior */
+    line-height: 1.2;             /* Ajustar el espacio entre líneas */
+  }
+
+  /* Ajustar tamaño de la descripción */
+  .centr p {
+    font-size: 32px;              /* Ajustar tamaño de la descripción */
+    margin-top: 0px;             /* Espaciado superior */
+    margin-bottom: 20px;          /* Espaciado inferior */
+    padding: 0 20px;              /* Agregar espaciado lateral */
+  }
+
+  /* Ajustes en los iconos de redes sociales */
+  .centr .social-icons {
+    display: flex;                /* Usar Flexbox */
+    flex-direction: column;       /* Alinear en columna */
+    align-items: center;          /* Centrar horizontalmente */
+    margin-top: 20px;            /* Espaciado superior */
+  }
+  .fa-brands{
+    margin-top: 60px;
+    font-size: 50px;
+
+  }
+  .centr .social-icons a {
+    margin: 10px 0;               /* Espacio entre iconos, verticalmente */
+    font-size: 24px;              /* Tamaño más pequeño para iconos */
+    color: #000;                  /* Cambiar color de los iconos si es necesario */
+    text-decoration: none;         /* Sin subrayado */
+  }
+
+  .dropdown-content {
+    display: none !important;      /* Asegúrate de usar !important para sobreescribir otras reglas */
+  }
+
+  .user-status2 {
+    display: none !important; 
+  }
+
+  .modal-content,
+  .modal-content2 {
+    width: 90%;  /* Ajustar el ancho al 90% de la pantalla */
+    max-width: 700px;  /* Definir un ancho máximo para mantener la legibilidad */
+    margin: 10% auto;  /* Centrar verticalmente y horizontalmente con margen */
+    padding: 50px;  /* Mantener el padding */
+  }
+
+  /* Ajustar el tamaño de los botones de cierre */
+  .close,
+  .close2 {
+    font-size: 64px;  /* Disminuir tamaño del botón de cierre para móvil */
+  }
+  .footer-content{
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,673 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    background-color: #ccbebb;
+    font-family: "Pixelify Sans", sans-serif;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+  background: transparent; /* Fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; /* Color de la parte que se arrastra */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color al pasar el mouse */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin; /* Hacer la barra más delgada */
+  scrollbar-color: #333 transparent; /* Color del thumb y del fondo */
+}
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav {
+    height: 60px;
+    width: 95%;
+    background-color: #8d8d8d00;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: sticky;
+    top:1px;
+    z-index: 2;
+    background-color: #ccbebb56;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: inline-block;
+    width: 734px !important;
+    margin-right:-500px;
+
+  
+    
+  }
+  nav ul li {
+    float: left;
+    margin-top: 1px;
+  }
+  
+  nav ul li a.izq {
+    color: #0b0b0b;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 18px;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  nav ul li a.izq:hover {
+    color: #fcfcfc;
+    background-color: #9874d4;
+    border-radius: 30px 30px 30px 30px;
+    transition: all .35s ease-in-out;
+  }
+  
+  nav ul li a.der { /* AQuest, a diferencia de les altres webs, és un divisor pixelat, he extret el codi de com es fa d'una web*/
+    color: #fcfcfc;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 18px;
+    padding-left: 84px;
+    padding-right: 84px;
+    background-color: #0b0b0b;
+    clip-path: polygon(
+    0px calc(100% - 28px),
+    4px calc(100% - 28px),
+    4px calc(100% - 20px),
+    8px calc(100% - 20px),
+    8px calc(100% - 12px),
+    12px calc(100% - 12px),
+    12px calc(100% - 8px),
+    20px calc(100% - 8px),
+    20px calc(100% - 4px),
+    28px calc(100% - 4px),
+    28px 100%,
+    calc(100% - 28px) 100%,
+    calc(100% - 28px) calc(100% - 4px),
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 20px) calc(100% - 8px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 8px) calc(100% - 20px),
+    calc(100% - 4px) calc(100% - 20px),
+    calc(100% - 4px) calc(100% - 28px),
+    100% calc(100% - 28px),
+    100% 28px,
+    calc(100% - 4px) 28px,
+    calc(100% - 4px) 20px,
+    calc(100% - 8px) 20px,
+    calc(100% - 8px) 12px,
+    calc(100% - 12px) 12px,
+    calc(100% - 12px) 8px,
+    calc(100% - 20px) 8px,
+    calc(100% - 20px) 4px,
+    calc(100% - 28px) 4px,
+    calc(100% - 28px) 0px,
+    28px 0px,
+    28px 4px,
+    20px 4px,
+    20px 8px,
+    12px 8px,
+    12px 12px,
+    8px 12px,
+    8px 20px,
+    4px 20px,
+    4px 28px,
+    0px 28px
+  );
+    
+  }
+  
+  nav ul li a.der:hover {
+    background-color: #9874d4;
+    transition: all .35s ease-in-out;
+  }
+  
+  .logo {
+    width: 250px;
+  }
+  
+
+  /* Estilos del menú desplegable */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    clip-path: polygon(
+    0px calc(100% - 28px),
+    4px calc(100% - 28px),
+    4px calc(100% - 20px),
+    8px calc(100% - 20px),
+    8px calc(100% - 12px),
+    12px calc(100% - 12px),
+    12px calc(100% - 8px),
+    20px calc(100% - 8px),
+    20px calc(100% - 4px),
+    28px calc(100% - 4px),
+    28px 100%,
+    calc(100% - 28px) 100%,
+    calc(100% - 28px) calc(100% - 4px),
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 20px) calc(100% - 8px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 12px) calc(100% - 12px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 8px) calc(100% - 20px),
+    calc(100% - 4px) calc(100% - 20px),
+    calc(100% - 4px) calc(100% - 28px),
+    100% calc(100% - 28px),
+    100% 28px,
+    calc(100% - 4px) 28px,
+    calc(100% - 4px) 20px,
+    calc(100% - 8px) 20px,
+    calc(100% - 8px) 12px,
+    calc(100% - 12px) 12px,
+    calc(100% - 12px) 8px,
+    calc(100% - 20px) 8px,
+    calc(100% - 20px) 4px,
+    calc(100% - 28px) 4px,
+    calc(100% - 28px) 0px,
+    28px 0px,
+    28px 4px,
+    20px 4px,
+    20px 8px,
+    12px 8px,
+    12px 12px,
+    8px 12px,
+    8px 20px,
+    4px 20px,
+    4px 28px,
+    0px 28px
+  );
+  }
+  
+  .dropdown-content li {
+    list-style: none;
+    height: 40px;
+    padding-top:5px;
+    padding-bottom:5px;
+  
+  }
+  
+  .dropdown-content li a {
+    color: #0b0b0b;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+
+    border-radius: 10px;
+    width: 120px;
+  }
+  
+  .dropdown-content li a:hover {
+    background-color: #9874d4;
+    color: #fcfcfc;
+    border-radius: 30px;
+    transition: all .35s ease-in-out;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    width: 100px !important;
+    height: 150px;
+  }
+  
+
+  .fondo1 {
+    width: 100%;
+    position: relative; 
+}
+
+.fondo { /*AQuí configurem el fons, un dels principals, ja que els fons que hi han són imatges, per tant, cadascún està en posicions diferent, i com ha de ser absolute, el posem manualment */
+    width: 100%;
+    z-index: -2;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges; 
+}
+.fondo2 {
+  position: absolute;
+  width: 100%;
+  margin-top: -100px;
+  z-index: -2;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; 
+}
+
+.textprinc { /*Aquí modifiquem el logo, cal aclarir de que en tot d'aquesta web posarem l'image rendering a pixelated i crisp-edges, per a que afegeixi com pixel i no els difumini */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    display: block;
+    width: 60%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+    animation: slideDown 0.5s ease forwards;
+    
+}
+
+.mic {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px);
+  margin: auto;
+  display: block;
+  z-index: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  overflow: hidden;
+  animation: levitate 2s ease-in-out infinite; 
+}
+
+.mic img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.mic img.frame1 {   /*Aquí configurem que té dos clases, la del primer frame i la del segon, posem animacions de opacity en diferents temps per a que cuadrin i canviin */
+  animation: switchFrame1 1s infinite;
+}
+
+.mic img.frame2 {
+  animation: switchFrame2 1s infinite;
+}
+
+
+.parte2{
+  height: 600px;
+  margin-top: 60px;
+  background-color: #9974d400; 
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.baseSM{
+  position: absolute;
+  left: 51%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 700px;
+}
+.iconoSM{
+  width: 350px;
+  display:block;
+  margin: auto;
+}
+.nombreSM{
+  width: 400px;
+  display:block;
+  margin: auto;
+  margin-top: -60px;
+}
+.descripcionSM {
+  width: 300px;
+  display:block;
+  margin: auto;
+}
+
+.divisor{
+  height: 100px;
+}
+
+.parte3{
+  height: 600px;
+  margin-top: 250px;
+  background-color: #4e337800; 
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.diferentes{
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 550px;
+  margin-left: 150px;
+  position: absolute;
+  z-index: -1;
+
+}
+
+.imagenDiferentes{
+  width: 250px;
+  margin-left: 310px;
+  margin-top: 80px;
+  animation: switchFrame1 1s infinite;
+
+
+}
+.imagenDiferente2{
+  width: 250px;
+  margin-left: -254px;
+  margin-top: 80px;
+  animation: switchFrame2 1s infinite;
+
+
+}
+
+.sep1 {
+  position: absolute;
+}
+.sep2{
+  background-color: #88292900;
+  height: 100px;
+  padding-top: 40px;
+  padding-left: 800px;
+  font-size: 21px;
+  margin-right: 280px;
+  text-align: justify;
+}
+.rigNota{
+  font-size: 25px;
+}
+.suelo{ /*Aquí está el fons de la part de sota, que es de fusta, té un difuminat a dalt, per a fer un canvi entre el fons principal i aquest */
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+  margin-left: -8px;
+}
+.suelo2{
+  margin-top: 300px;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+  margin-left: -8px;
+}
+.personajeSM{
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 200px;
+  padding-top: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.items{
+  display: flex;
+  flex-direction: row;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  align-items: center;
+  justify-content: center;
+  gap:200px;
+  width: 100%;
+}
+.itemPT1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.itemPT2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.IT1{
+  width: 100px;
+  margin-bottom: -60px;
+  animation: levitate2 2s ease-in-out infinite; 
+
+}
+.sujeta{
+  margin-top: 0px;
+  width: 170px;
+  z-index: -1;
+}
+/*Aquí principalment (a partir de sota), el que fem es configurar les notes dels costats, els text en "h" i "p", etc. */
+.aescribir1{
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 600px;
+  margin-top: 150px;
+  rotate: -9deg;
+}
+.descH{
+  width: 240px;
+  position: absolute;
+  padding-top: 200px;
+  padding-left: 100px;
+  font-size: 70px;
+
+}
+.desc1{
+  width: 390px;
+  position: absolute;
+  padding-top: 320px;
+  padding-left: 100px;
+  font-size: 25px;
+
+
+}
+
+.desc2{
+  width: 390px;
+  position: absolute;
+  padding-top: 320px;
+  padding-left: 100px;
+  font-size: 25px;
+}
+
+.descH2{
+  width: 240px;
+  position: absolute;
+  padding-top: 200px;
+  padding-left: 100px;
+  font-size: 70px;
+
+
+}
+.overTexto2 {
+  width: 240px;
+  position: absolute;
+  padding-right:380px;
+  margin-top:-60px;
+ right: 0px;
+}
+
+.butt1 {
+  width: 430px;
+  position: absolute;
+  margin-top: 680px;
+  height: 50px;
+  margin-left: 80px;
+  color:white;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #0b0b0b;
+  clip-path: polygon(
+    0px calc(100% - 20px),
+    4px calc(100% - 20px),
+    4px calc(100% - 12px),
+    8px calc(100% - 12px),
+    8px calc(100% - 8px),
+    12px calc(100% - 8px),
+    12px calc(100% - 4px),
+    20px calc(100% - 4px),
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 20px),
+    100% calc(100% - 20px),
+    100% 20px,
+    calc(100% - 4px) 20px,
+    calc(100% - 4px) 12px,
+    calc(100% - 8px) 12px,
+    calc(100% - 8px) 8px,
+    calc(100% - 12px) 8px,
+    calc(100% - 12px) 4px,
+    calc(100% - 20px) 4px,
+    calc(100% - 20px) 0px,
+    20px 0px,
+    20px 4px,
+    12px 4px,
+    12px 8px,
+    8px 8px,
+    8px 12px,
+    4px 12px,
+    4px 20px,
+    0px 20px
+  );
+
+}
+
+.iralmod{
+  display: block;
+  margin: auto;
+  margin-top: 70px;
+  padding:20px 70px 20px 70px;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #0b0b0b;
+  color: white;
+  clip-path: polygon(
+    0px calc(100% - 20px),
+    4px calc(100% - 20px),
+    4px calc(100% - 12px),
+    8px calc(100% - 12px),
+    8px calc(100% - 8px),
+    12px calc(100% - 8px),
+    12px calc(100% - 4px),
+    20px calc(100% - 4px),
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 20px),
+    100% calc(100% - 20px),
+    100% 20px,
+    calc(100% - 4px) 20px,
+    calc(100% - 4px) 12px,
+    calc(100% - 8px) 12px,
+    calc(100% - 8px) 8px,
+    calc(100% - 12px) 8px,
+    calc(100% - 12px) 4px,
+    calc(100% - 20px) 4px,
+    calc(100% - 20px) 0px,
+    20px 0px,
+    20px 4px,
+    12px 4px,
+    12px 8px,
+    8px 8px,
+    8px 12px,
+    4px 12px,
+    4px 20px,
+    0px 20px
+  );
+}
+.amod{
+  list-style: none !important;
+  text-decoration: none !important;
+}
+
+#audio { /*Aquí posem invisibles els audios, ja que no s'han de veure, només s'han d'executar quan li donem al botó*/
+  visibility: hidden;
+  
+}
+#audio2 {
+  visibility: hidden;
+}
+/*Aquí hi han les animacions de canvi de frame */
+@keyframes switchFrame1 {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.5%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes switchFrame2 {
+  0%, 50% {
+    opacity: 0;
+  }
+  50.5%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+/* I aquí podem veure la aimació de levitació del micrófon */
+@keyframes levitate {
+  0%, 100% {
+      transform: translate(-50%, -50px);
+  }
+  50% {
+      transform: translate(-50%, -55px);
+  }
+}
+@keyframes levitate2 {
+  0%, 100% {
+      transform: translate(0, -20px);
+  }
+  50% {
+      transform: translate(0, -10px);
+  }
+}
+
+

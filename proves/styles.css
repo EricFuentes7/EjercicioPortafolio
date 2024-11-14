@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    display: block; /* Para eliminar los espacios en blanco */
+    width: 100vw;   /* Ocupa todo el ancho de la ventana */
+    height: 100vh;  /* Ocupa toda la altura de la ventana */
+}

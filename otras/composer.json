@@ -1,0 +1,9 @@
+{
+    "name": "efuentes/otras",
+    "description": "Proyecto para enviar correos de notificación",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "minimum-stability": "stable",
+    "license": "MIT"
+}

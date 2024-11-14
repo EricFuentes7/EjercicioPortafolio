@@ -1,0 +1,503 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    background-color: #000000
+
+    ;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    background: transparent; /* Fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333; /* Color de la parte que se arrastra */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color al pasar el mouse */
+}
+
+/* Para Firefox */
+* {
+    scrollbar-width: thin; /* Hacer la barra más delgada */
+    scrollbar-color: #333 transparent; /* Color del thumb y del fondo */
+}
+
+nav {
+    height: 60px;
+    width: 95%;
+    background-color: #8d8d8d00;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    font-family: 'Questrial', sans-serif;
+    width: 734px !important;
+
+}
+
+nav ul li {
+    float: left;
+    margin-top: 1px;
+}
+
+nav ul li a.izq {
+    color: #fcfcfc;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 18px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+nav ul li a.izq:hover {
+    color: #fcfcfc;
+    background-color: #9874d4;
+    border-radius: 30px 30px 30px 30px;
+    transition: all .35s ease-in-out;
+}
+
+nav ul li a.der {
+    color: #fcfcfc;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 18px;
+    padding-left: 84px;
+    padding-right: 84px;
+    background-color: #131313;
+    border-radius: 30px 30px 30px 30px;
+}
+
+nav ul li a.der:hover {
+    background-color: #9874d4;
+    transition: all .35s ease-in-out;
+}
+
+.logo {
+    width: 250px;
+}
+
+.centr {
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    color: #0b0b0b;
+}
+
+.nom {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #131313;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown-content li {
+    list-style: none;
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdown-content li a {
+    color: #fcfcfc;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    font-family: 'Questrial', sans-serif;
+    border-radius: 10px;
+    width: 120px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #9874d4;
+    color: #fcfcfc;
+    border-radius: 30px;
+    transition: all .35s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    width: 100px !important;
+    height: 150px;
+}
+
+.logo {
+    width: 250px;
+}
+
+.container {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.overlay {
+    margin-top: 40px;
+    color: white;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    /**font-family: 'Questrial', sans-serif;**/
+    font-weight: 800;
+}
+
+.overlay h1 {
+    font-size: 37px;
+    margin: 0;
+    margin-bottom:0px;
+
+}
+
+.overlay p {
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 700;
+
+    color: #fc6c0f;
+}
+.magia{
+    display: flex;
+    gap: 10px;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    position: absolute;
+    margin-top: 0px;
+    z-index: -1; /* Envía el video detrás de los botones y otros elementos */
+    width: 100vw; /* Ajusta el tamaño del video a todo el ancho de la pantalla */
+    height: 100vh; /* Mantén la altura del video a toda la pantalla */
+    object-fit: cover; /* Asegura que el video cubra completamente el contenedor sin distorsión */
+    top: 0;
+    left: 0;
+    transform: scale(1.3); /* Aumenta el tamaño del video en un 20% */
+}
+
+.recortado {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px); /* Ajusta la altura para que no se superponga con los botones */
+    overflow: hidden;
+    top: -20px; /* Espacio para los botones y el menú */
+}
+.padrepresentacion{
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centro horizontal */
+    align-items: center; /* Centro vertical */
+}
+
+.difuminado {
+    margin-top:306px;
+    height: 400px;
+    width: 110%;
+    z-index: 0;
+    background-image: linear-gradient(to bottom, #00000000, #00000027, #00000049, #00000079, #000000ad, #000000da, #000000e7, #000000, #000000, #000000, #000000, #000000);
+}
+.presentacion {
+    color:#ffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    margin-top:200px;
+    width: 900px;
+}
+
+.presentacion p {
+    color: #86868b;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    width: 800px;
+    font-size: 20px;
+}
+.presentacion h1 {
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+    letter-spacing: -5px;
+    line-height : 70px;
+    margin-bottom: 10px;
+
+
+
+}
+.slick-slide {
+    margin: 0 10px;
+}
+.carousel {
+    width: 95%;
+    margin: auto;
+    margin-top:20px;
+}
+
+.trackss{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color:white; 
+    align-items: center;
+    text-align: center;
+    margin-top: 400px;
+    margin-bottom: 0px;
+}
+.trackss2{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color:#86868b; 
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.slide {
+    background: #00000000;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.slide div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+    
+    
+
+}
+.slide div div{
+    flex-direction: column;
+    padding-left: 100px;
+    text-align: left;
+    width: 800px;
+    margin-bottom: 0;
+    margin-top: -30px;
+}
+s
+.slide div div h4{
+    font-weight: 900;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+}
+.slide div div p{
+    font-weight: 300;
+    font-size: 20px;
+    margin-top: 0;
+}
+.slide img {
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+/*Aquí està tota la configuració del contenidor per a poder registrar-nos*/
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    color:white; 
+    font-family: "Open Sans", sans-serif;
+    align-items: center;
+    text-align: center;
+
+
+}
+.form-container h1{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color:white; 
+    align-items: center;
+    text-align: center;
+    margin-top: 400px;
+    margin-bottom: 0px;
+}
+.form-container label {
+    margin-bottom: 20px;
+
+}
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    align-items: center;
+    text-align: center;
+    color:#86868b; 
+    font-size: 20px;
+
+}
+button {
+    padding: 10px;
+    background-color: #6ba378;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+
+}
+button:hover {
+    background-color: #218838;
+}
+.menu{
+    width: 63.8%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .menu-toggle{
+    display: none;
+  }
+  .fa-bars{
+    font-size: 100px;
+    padding-top:20px;
+    
+  }
+  /* Responsive para pantallas pequeñas (móviles) */
+  /* Responsive para pantallas pequeñas (móviles) */
+  @media (max-width: 980px) {
+    /* Ocultar el menú de navegación original */
+    nav ul {
+      display: none;
+      
+    }
+  
+    /* Mostrar el botón del menú hamburguesa solo en móviles */
+    .menu-toggle {
+      display: block;
+      background-color: transparent;
+      border: none;
+      color: #0b0b0b;
+      font-size: 30px;
+      cursor: pointer;
+      width: 30px;
+      margin-right: 60px;
+      padding-top: 15px;
+      z-index: 1000;
+  
+  
+    }
+  
+    .menu {
+      display: none;
+    }
+  
+    /* Estilos para mostrar el menú cuando se abre (ocupa toda la pantalla) */
+    body.no-scroll {
+        overflow: hidden; /* Deshabilita el scroll en el cuerpo */
+      }
+      
+      .menu.open {
+        display: flex;
+        flex-direction: column !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; /* Asegúrate de que ocupe todo el ancho */
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        gap: 20px;
+        overflow: hidden; /* Evita scroll dentro del menú */
+      }
+      
+  
+    /* Estilo de los links del menú en móviles */
+    .menu.open li {
+      display: block;
+      min-width: 100vh;
+      padding-bottom: 50px;
+      z-index: 1000;
+  
+  
+    }
+  
+    .menu.open a {
+      color: #fcfcfc;
+      font-size: 60px;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+      z-index: 1000;
+  
+    }
+  
+    .menu.open a:hover {
+      background-color: #9874d4;
+      z-index: 1000;
+  
+    }
+  
+    /* Ajustar el tamaño del logo */
+    .logo {
+      width: 500px;
+      height: 120px;
+      margin-top: 25px;
+      z-index: 1000;
+  
+    }
+    .dropdown-content {
+        display: none !important;      /* Asegúrate de usar !important para sobreescribir otras reglas */
+      }
+  }
+  

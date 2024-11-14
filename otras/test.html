@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrousel con Slick</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <style>
+        html {
+            background-color: aqua;
+        }
+        .slick-slide {
+            margin: 0 10px;
+        }
+        .carousel {
+            width: 80%;
+            margin: auto;
+        }
+        .slide {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carousel">
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+        <div class="slide">Slide 3</div>
+        <div class="slide">Slide 4</div>
+        <div class="slide">Slide 5</div>
+    </div>
+    <button class="slick-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="slick-next"><i class="fas fa-chevron-right"></i></button>
+    
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: false, // Desactivar los puntos de navegación
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button class="slick-prev"><i class="fas fa-chevron-left"></i></button>', // Personaliza el botón anterior
+                nextArrow: '<button class="slick-next"><i class="fas fa-chevron-right"></i></button>' // Personaliza el botón siguiente
+            });
+        });
+    </script>
+    
+    </body>
+    </html>
