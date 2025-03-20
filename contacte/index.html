@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Eric Of Crypto - Contacte</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="images/newcoin.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/images/logo_cendrassos.png" class="logo">
+            <!-- Botón del menú hamburguesa solo para móviles -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="menu" class="menu">
+                <span>
+                    <li><a href="/index.html" class="izq">Principal</a></li>
+                    <li><a href="/sobre-mi/index.html" class="izq">Sobre mí</a></li>
+                    <li><a href="/curriculum/index.html" class="izq">Currículum</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="izq">Projectes</a>
+                        <ul class="dropdown-content">
+                            <li><a href="/starmoonfnf/index.html">FNFXS</a></li>
+                            <li><a href="/TBOI/index.html">TBOS</a></li>
+                            <li><a href="/otras/index.html">EL CANTANTE</a></li>
+                        </ul>
+                    </li>
+
+                <li><a href="/contacte/index.html" class="der">Contacte</a></li>
+            </span>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="form-container">
+            <h1>Contacte</h1>
+            <form id="contact-form" action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Correu electrònic" required>
+                <textarea name="message" placeholder="Missatge" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+    <script src="/cookies.js"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script>
+        if (window.innerWidth <= 980) { // Solo en móviles
+            var map = L.map('map').setView([42.27369, 2.9647], 18);  // Cambia el zoom a 25 en móviles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 26,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+            
+            // Añadir marcador en la versión móvil también
+            var marker = L.marker([42.27369, 2.9647]).addTo(map);
+            marker.bindPopup('Oficina').openPopup();
+            
+        } else { // Para pantallas más grandes
+            var map = L.map('map').setView([42.27369, 2.9647], 17);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+            
+            var marker = L.marker([42.27369, 2.9647]).addTo(map);
+            marker.bindPopup('Oficina').openPopup();
+        }
+    </script>
+    
+    
+        <script>
+            // script.js
+            document.getElementById("menu-toggle").addEventListener("click", function () {
+                var menu = document.getElementById("menu");
+                menu.classList.toggle("open");
+        
+                // Habilitar o deshabilitar el scroll del body
+                document.body.classList.toggle("no-scroll", menu.classList.contains("open"));
+            });
+        
+            // Función para redirigir al hacer clic en "Projectes"
+    document.querySelectorAll('.dropdown > a.izq').forEach(function(dropdownLink) {
+        dropdownLink.addEventListener('click', function (event) {
+            // Siempre redirigir al hacer clic en "Projectes"
+            event.preventDefault(); // Evitar la acción predeterminada
+            window.location.href = '/proj.html'; // Redirigir a /proj.html
+        });
+    });
+            
+        </script>
+</body>
+</html>

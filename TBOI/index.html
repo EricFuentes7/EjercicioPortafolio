@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Binding Of Starmoon</title>
+  <link rel="icon" type="image/png" href="/images/newcoin.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/images/logo_cendrassos_pixel.png" class="logo">
+            <ul class="lolaso">
+                <li><a href="/index.html" class="izq">Principal</a></li>
+                <li><a href="/sobre-mi/index.html" class="izq">Sobre mi</a></li>
+                <li><a href="/curriculum/index.html" class="izq">Currículum</a></li>
+                <li class="dropdown">
+                    <a href="#" class="izq">Projectes</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/starmoonfnf/index.html">FNFXS</a></li>
+                        <li><a href="/TBOI/index.html">TBOS</a></li>
+                        <li><a href="/otras/index.html">EL CANTANTE</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li><a href="/contacte/index.html" class="der">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="fondo1">
+        <img src="/TBOI/images/intro/fil_1.png" class="fondo">
+        <img src="/TBOI/images/intro/fil_2.png" class="textprinc">
+    </div>
+  <div class="mic">
+    <img src="/TBOI/images/intro/an/1_2.png" alt="Frame 1" class="frame1">
+    <img src="/TBOI/images/intro/an/2_2.png" alt="Frame 2" class="frame2">
+  </div>
+  <div class="parte2">
+    <img src="/TBOI/images/intro/fil2_1.png" class="fondo2">
+
+    <img src="/TBOI/images/charactermenu.png" class="baseSM" id="baseSM">
+    <div class="divisor"></div>
+    <img src="/TBOI/images/icon.png" class="iconoSM" id="iconoSM">
+
+    <img src="/TBOI/images/nom.png" class="nombreSM">
+    <img src="/TBOI/images/intro/desc.png" class="descripcionSM" id="descripcionSM">
+  </div>
+  <div class="parte3">
+    <img src="/TBOI/images/intro/fil2_1.png" class="fondo2">
+
+    <div class="sep1">
+      <img src="/TBOI/images/intro/an/menu2.png" class="diferentes">
+      <img src="/TBOI/images/anim/loadimages-018.png" class="imagenDiferentes">
+      <img src="/TBOI/images/anim/loadimages-018_2.png" class="imagenDiferente2">
+
+    </div>
+    <div class="sep2">
+      <p class="rigNota">
+        The Binding of Starmoon és un mod per a The Binding of Isaac: Afterbirth+ que expandeix la jugabilitat en introduir nous personatges, cadascun amb habilitats úniques que ofereixen diferents estratègies en el joc. També afegeix una varietat d'objectes i col·leccionables que poden influir significativament en el desenvolupament de cada partida, permetent combinacions i estils de joc innovadors.
+
+A més, el mod presenta nous enemics i desafiaments, així com entorns i nivells addicionals, enriquint l'experiència visual i narrativa. Les mecàniques de joc també poden ser millorades, proporcionant noves formes d'interactuar amb el món del joc i les seves dinàmiques. En conjunt, The Binding of Starmoon revitalitza l'experiència original, oferint als jugadors més opcions i contingut per explorar i gaudir.
+        </p>
+    </div>
+  </div>
+  <div class="overTexto">
+    <img src="/TBOI/images/test/aescribit2.png" class="aescribir1">
+    <h1 class="descH">MIC</h1>
+    <p class="desc1">
+      
+      Efecte actiu: En fer servir el micròfon, el personatge crida de manera ensordidora, causant un dany massiu a tota l'habitació i eliminant instantàniament els enemics propers. El crit té un radi de rang limitat, afectant més els enemics propers i debilitant-se amb la distància.</p>
+      <button class="butt1" onclick="playSound()">Escoltar só</button>
+
+      <audio id="audio" controls>
+        <source src="/TBOI/images/test/scream_2.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+     </div>
+     <div class="overTexto2">
+    <img src="/TBOI/images/test/aescribit2.png" class="aescribir1">
+    <h1 class="descH2">MADMOON</h1>
+
+    <p class="desc2">
+      Efecte actiu: En invocar la lluna vermella, cau del cel i causa dany massiu a tots els enemics de la sala. L'impacte provoca explosions de sang i atemoreix als enemics propers, amb una força que disminueix a mesura que s'allunyen.</p>
+      <button class="butt1" onclick="playSound2()">Escoltar só</button>
+      <audio id="audio2" controls>
+        <source src="/TBOI/images/test/boom_2.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+     </div>
+
+  <div class="parte4">
+    <img src="/TBOI/images/test/suel2.png" class="suelo">
+    <img src="/TBOI/images/test/suel2.png" class="suelo2">
+    <img src="/TBOI/images/test/character_template.png" class="personajeSM">
+    <div class="items">
+      <div class="itemPT1">
+        <img src="/TBOI/images/test/collectibles_611_larynx.png" class="IT1">
+        <img src="/TBOI/images/test/levelitem_001_itemaltar.png" class="sujeta">
+      </div>
+      <div class="itemPT2">
+        <img src="/TBOI/images/test/Madmoon.png" class="IT1">
+        <img src="/TBOI/images/test/levelitem_001_itemaltar.png" class="sujeta">
+      </div>
+    </div>
+    
+  </div>
+  <a href="https://gamebanana.com/mods/298612" class="amod"><button class="iralmod">DESCARREGA EL MOD</button></a>
+
+  <script src="script.js"></script>
+  <script src="/cookies.js"></script>
+
+  
+
+</body>
+</html>

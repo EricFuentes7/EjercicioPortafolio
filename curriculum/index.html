@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Eric Of Crypto - Currículum</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/images/newcoin.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/images/logo_cendrassos.png" class="logo">
+            <!-- Botón del menú hamburguesa solo para móviles -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="menu" class="menu">
+                <span>
+                    <li><a href="/index.html" class="izq">Principal</a></li>
+                    <li><a href="/sobre-mi/index.html" class="izq">Sobre mí</a></li>
+                    <li><a href="/curriculum/index.html" class="izq">Currículum</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="izq">Projectes</a>
+                        <ul class="dropdown-content">
+                            <li><a href="/starmoonfnf/index.html">FNFXS</a></li>
+                            <li><a href="/TBOI/index.html">TBOS</a></li>
+                            <li><a href="/otras/index.html">EL CANTANTE</a></li>
+                        </ul>
+                    </li>
+
+                <li><a href="/contacte/index.html" class="der">Contacte</a></li>
+            </span>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="cont1 fade-in">
+        <div class="side1">
+            <img src="/images/pfpsi2.jpeg" alt="Foto Perfil" class="foto-cercle">
+            <h1>Eric Fuentes</h1>
+            <p class="titol">Desenvolupador Fullstack</p>
+            <p class="local">Figueres, Girona</p>
+            <p><i class="fas fa-envelope"></i> OCULTO@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +34 OCULTO</p>
+            <hr>
+            <h2>Habilitats</h2>
+            <p>HTML, CSS, JS</p>
+            <div class="barra-progres"><div class="progres" style="width:95%"></div></div>
+            <p>React, Node.js</p>
+            <div class="barra-progres"><div class="progres" style="width:90%"></div></div>
+            <p>Java, Python</p>
+            <div class="barra-progres"><div class="progres" style="width:80%"></div></div>
+        </div>
+        <div class="main1">
+            <div class="resum1">
+                <h2>Resum</h2>
+                <p>Sóc un desenvolupador fullstack apassionat per la tecnologia i les solucions innovadores. M'encanta crear aplicacions tant del costat del client com del servidor i aprendre noves tecnologies en el procés.</p>
+            </div>
+            <div class="stor">
+                <h2>Experiència Laboral</h2>
+                <h3>Desenvolupador Fullstack / <a href="https://www.google.com/about/careers/applications/">Google</a></h3>
+                <p><i class="fas fa-calendar"></i> Gen 2026 - Actualitat</p>
+                <p>Desenvolupament d'aplicacions web completes utilitzant React i Node.js. Col·laboració en equips àgils per implementar solucions escalables i eficients.</p>
+                
+                <h3>Desenvolupador Web Junior / <a href="https://sistemesemporda.net/">Sistemes Informàtics Empordà</a></h3>
+                <p><i class="fas fa-calendar"></i> Set 2025 - Des 2025</p>
+                <p>Construcció d'interfícies interactives i optimització d'aplicacions per millorar l'experiència d'usuari.</p>
+            </div>
+            <div class="edu1">
+                <h2>Formació Acadèmica</h2>
+                <h3>Enginyeria de Software / Universitat de Girona</h3>
+                <p><i class="fas fa-calendar"></i> 2028 - Actualitat</p>
+                <p>Especialització en desenvolupament de Software, metodologies àgils i arquitectura de programari avançada.</p>
+                
+                <h3>Doble Grau Superior DAM / Institut de Girona</h3>
+                <p><i class="fas fa-calendar"></i> 2027 - 2028</p>
+                <p>Formació en desenvolupament d'aplicacions multiplataforma (DAM) i desenvolupament d'aplicacions web (DAW).</p>
+                
+                <h3>Grau Superior DAW / Cendrassos, Figueres</h3>
+                <p><i class="fas fa-calendar"></i> 2025 - 2027</p>
+                <p>Especialització en desenvolupament d'aplicacions web. Projecte final orientat a la creació d'una plataforma de gestió educativa.</p>
+        
+                <h3>CFGM de Sistemes Microinformàtics i Xarxes / Cendrassos, Figueres</h3>
+                <p><i class="fas fa-calendar"></i> 2023 - 2025</p>
+                <p>Enfocament en l'administració de sistemes operatius, xarxes i serveis de suport tècnic.</p>
+        
+                <h3>Educació Secundària / INS Alexandre Deulofeu</h3>
+                <p><i class="fas fa-calendar"></i> 2019 - 2023</p>
+                <p>Formació acadèmica general amb enfocament en tecnologia i informàtica.</p>
+            </div>
+            <div class="fut1">
+                <h2>Metes Futures</h2>
+                <p>M'agradaria especialitzar-me en intel·ligència artificial aplicada al desenvolupament de programari, amb l'objectiu de crear aplicacions útils i innovadores per a la comunitat. També aspiro a treballar en empreses com Google, on pugui contribuir al desenvolupament de solucions tecnològiques que milloraran la vida de les persones.</p>
+            </div>
+        </div>
+    </div>
+    <script src="/cookies.js"></script>
+    <script>
+        // script.js
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("open");
+    
+            // Habilitar o deshabilitar el scroll del body
+            document.body.classList.toggle("no-scroll", menu.classList.contains("open"));
+        });
+    
+         // Función para redirigir al hacer clic en "Projectes"
+    document.querySelectorAll('.dropdown > a.izq').forEach(function(dropdownLink) {
+        dropdownLink.addEventListener('click', function (event) {
+            // Siempre redirigir al hacer clic en "Projectes"
+            event.preventDefault(); // Evitar la acción predeterminada
+            window.location.href = '/proj.html'; // Redirigir a /proj.html
+        });
+    });
+    </script>
+    
+</body>
+</html>

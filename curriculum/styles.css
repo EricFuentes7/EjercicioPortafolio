@@ -1,0 +1,404 @@
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(235, 235, 235) 90%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  height: 60px;
+  width: 95%;
+  background-color: #8d8d8d00;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-block;
+  font-family: 'Questrial', sans-serif;
+  width: 734px !important;
+
+}
+
+nav ul li {
+  float: left;
+  margin-top: 1px;
+}
+
+nav ul li a.izq {
+  color: #0b0b0b;
+  font-weight: 100;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+nav ul li a.izq:hover {
+  color: #fcfcfc;
+  background-color: #9874d4;
+  border-radius: 30px;
+  transition: all .35s ease-in-out;
+}
+
+nav ul li a.der {
+  color: #fcfcfc;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 18px 84px;
+  background-color: #0b0b0b;
+  border-radius: 30px;
+}
+
+nav ul li a.der:hover {
+  background-color: #9874d4;
+  transition: all .35s ease-in-out;
+}
+
+.logo {
+  width: 250px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content li {
+  list-style: none;
+  height: 40px;
+  padding: 5px;
+}
+
+.dropdown-content li a {
+  color: #0b0b0b;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  font-family: 'Questrial', sans-serif;
+  border-radius: 10px;
+  width: 120px;
+}
+
+.dropdown-content li a:hover {
+  background-color: #9874d4;
+  color: #fcfcfc;
+  border-radius: 30px;
+  transition: all .35s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  width: 100px !important;
+  height: 150px;
+}
+
+.cont1 {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 50px auto;
+  font-family: 'Questrial', sans-serif;
+  padding: 20px;
+}
+
+.side1 {
+  width: 25%;
+  background-color: #f0f0f0;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.foto-cercle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.side1 h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.main1 {
+  width: 70%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resum1, .stor, .edu1, .fut1 {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resum1 h2, .stor h2, .edu1 h2, .fut1 h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #5c5c5c;
+}
+
+h3 {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #6a6a6a;
+}
+
+h3 a {
+  color: #9874d4;
+  text-decoration: none;
+}
+
+h3 a:hover {
+  text-decoration: underline;
+}
+
+.barra-progres {
+  background-color: #ddd;
+  border-radius: 13px;
+  padding: 3px;
+  margin-bottom: 15px;
+}
+
+.progres {
+  background-color: #9874d4;
+  height: 10px;
+  border-radius: 13px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards; /* Duración y tipo de animación */
+}
+.menu{
+  width: 63.8%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.menu-toggle{
+  display: none;
+}
+.fa-bars{
+  font-size: 100px;
+  padding-top:20px;
+  
+}
+/* Responsive para pantallas pequeñas (móviles) */
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 980px) {
+  /* Ocultar el menú de navegación original */
+  nav ul {
+    display: none;
+    
+  }
+
+  /* Mostrar el botón del menú hamburguesa solo en móviles */
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #0b0b0b;
+    font-size: 30px;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 60px;
+    padding-top: 15px;
+    z-index: 1000;
+
+
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /* Estilos para mostrar el menú cuando se abre (ocupa toda la pantalla) */
+  body.no-scroll {
+    overflow: hidden; /* Deshabilita el scroll en el cuerpo */
+  }
+  
+  .menu.open {
+    display: flex;
+    flex-direction: column !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Asegúrate de que ocupe todo el ancho */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;
+    overflow: hidden; /* Evita scroll dentro del menú */
+  }
+  
+
+  /* Estilo de los links del menú en móviles */
+  .menu.open li {
+    display: block;
+    min-width: 100vh;
+    padding-bottom: 50px;
+    z-index: 1000;
+
+
+  }
+
+  .menu.open a {
+    color: #fcfcfc;
+    font-size: 60px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    z-index: 1000;
+
+  }
+
+  .menu.open a:hover {
+    background-color: #9874d4;
+    z-index: 1000;
+
+  }
+
+  /* Ajustar el tamaño del logo */
+  .logo {
+    width: 500px;
+    height: 120px;
+    margin-top: 25px;
+    z-index: 1000;
+
+  }
+  .dropdown-content {
+    display: none !important;      /* Asegúrate de usar !important para sobreescribir otras reglas */
+  }
+
+  .cont1 {
+    flex-direction: column; /* Cambiar la dirección del flex a columna */
+    align-items: center; /* Centrar el contenido */
+    width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+    margin: 40px 0; /* Espaciado superior e inferior */
+  }
+
+  .side1 {
+    margin-top: 100px;
+    width: 80%; /* Ajustar el ancho */
+    padding: 40px; /* Aumentar el padding */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+
+  .main1 {
+    background-color: #ffffff00;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
+    width: 90%; /* Aumentar el ancho de la sección principal */
+    padding: 30px; /* Asegurar que el padding sea simétrico */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+
+  .foto-cercle {
+    width: 550px; /* Aumentar el tamaño de la foto */
+    height: 550px;
+  }
+
+  .side1 h1 {
+    font-size: 100px; /* Aumentar el tamaño del nombre */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: -20px;
+  }
+
+  .side1 p {
+    font-size: 30px; /* Aumentar el tamaño de los textos */
+    text-align: center; /* Centrar el texto */
+  }
+
+
+  h3 {
+    font-size: 24px; /* Aumentar el tamaño de los subtítulos */
+    text-align: center; /* Centrar el texto */
+  }
+  .resum1, .stor, .edu1, .fut1 {
+    width: 90%; /* Ajustar el ancho de las secciones */
+    padding: 30px; /* Aumentar el padding */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centrar el texto */
+    
+  }
+
+  .resum1 h2, .stor h2, .edu1 h2, .fut1 h2 {
+    font-size: 80px; /* Aumentar el tamaño de los títulos */
+    margin-bottom: 15px; /* Espacio inferior */
+  }
+  .resum1 h3, .stor h3, .edu1 h3, .fut1 h3 {
+    font-size: 40px; /* Aumentar el tamaño de los títulos */
+    margin-bottom: 65px; /* Espacio inferior */
+  }
+  .resum1 p, .stor p, .edu1 p, .fut1 p {
+    font-size: 35px; /* Aumentar el tamaño de los títulos */
+    margin-bottom: 15px; /* Espacio inferior */
+  }
+}

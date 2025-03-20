@@ -1,0 +1,385 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(235, 235, 235) 90%);
+    font-family: 'Questrial', sans-serif;
+
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+
+
+nav {
+  height: 60px;
+  width: 95%;
+  background-color: #8d8d8d00;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 10;
+
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    font-family: 'Questrial', sans-serif;
+    z-index: 10;
+    width: 734px !important;
+
+
+  }
+  
+  nav ul li {
+    float: left;
+    margin-top: 1px;
+  }
+  
+  nav ul li a.izq {
+    color: #0b0b0b;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 18px;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  nav ul li a.izq:hover {
+    color: #fcfcfc;
+    background-color: #9874d4;
+    border-radius: 30px 30px 30px 30px;
+    transition: all .35s ease-in-out;
+  }
+  
+  nav ul li a.der {
+    color: #fcfcfc;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 18px;
+    padding-left: 84px;
+    padding-right: 84px;
+    background-color: #0b0b0b;
+    border-radius: 30px 30px 30px 30px;
+  }
+  
+  nav ul li a.der:hover {
+    background-color: #9874d4;
+    transition: all .35s ease-in-out;
+  }
+  
+  .logo {
+    width: 250px;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    
+  }
+  
+  .dropdown-content li {
+    list-style: none;
+    height: 40px;
+    padding-top:5px;
+    padding-bottom:5px;
+  
+  }
+  
+  .dropdown-content li a {
+    color: #0b0b0b;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    font-family: 'Questrial', sans-serif;
+    border-radius: 10px;
+    width: 100px;
+  }
+  
+  .dropdown-content li a:hover {
+    background-color: #9874d4;
+    color: #fcfcfc;
+    border-radius: 30px;
+    transition: all .35s ease-in-out;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    width: 100px !important;
+    height: 150px;
+  }
+  /* A partir d'aquí tota la configuració del formulari */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.form-container {
+    flex: 1;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+input, textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 90%;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #9874d4;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #9874d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #28a745;
+    transform: translateY(-2px);
+}
+/*tota la configuració del mapa */
+.map-container {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+#map {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.menu{
+  width: 63.8%;
+  display: flex;
+  justify-content: space-between;
+}
+.menu-toggle{
+  display: none;
+}
+.fa-bars{
+  font-size: 100px;
+  padding-top:20px;
+  
+}
+/* Responsive para pantallas pequeñas (móviles) */
+/* Responsive para pantallas pequeñas (móviles) */
+.menu{
+  width: 63.8%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.menu-toggle{
+  display: none;
+}
+.fa-bars{
+  font-size: 100px;
+  padding-top:20px;
+  
+}
+/* Responsive para pantallas pequeñas (móviles) */
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 980px) {
+  /* Ocultar el menú de navegación original */
+  nav ul {
+    display: none;
+    
+  }
+
+  /* Mostrar el botón del menú hamburguesa solo en móviles */
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #0b0b0b;
+    font-size: 30px;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 60px;
+    padding-top: 15px;
+    z-index: 1000;
+
+
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /* Estilos para mostrar el menú cuando se abre (ocupa toda la pantalla) */
+  body.no-scroll {
+    overflow: hidden; /* Deshabilita el scroll en el cuerpo */
+  }
+  
+  .menu.open {
+    display: flex;
+    flex-direction: column !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Asegúrate de que ocupe todo el ancho */
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;
+    overflow: hidden; /* Evita scroll dentro del menú */
+  }
+  
+
+  /* Estilo de los links del menú en móviles */
+  .menu.open li {
+    display: block;
+    min-width: 100vh;
+    padding-bottom: 50px;
+    z-index: 1000;
+
+
+  }
+
+  .menu.open a {
+    color: #fcfcfc;
+    font-size: 60px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    z-index: 1000;
+
+  }
+
+  .menu.open a:hover {
+    background-color: #9874d4;
+    z-index: 1000;
+
+  }
+
+  /* Ajustar el tamaño del logo */
+  .logo {
+    width: 500px;
+    height: 120px;
+    margin-top: 25px;
+    z-index: 1000;
+
+  }
+  .dropdown-content {
+    display: none !important;      /* Asegúrate de usar !important para sobreescribir otras reglas */
+  }
+  .container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column !important;
+    height: 100vh;
+    
+}
+.form-container{
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+  background-color: #0b0b0b00;
+}
+.form-container h1 {
+  font-size: 130px;
+
+}
+input, textarea {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 25px;
+  font-size: 30px;
+  width: 95%;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease;
+}
+#contact-form button {
+width: 100%;
+font-size: 30px;
+
+}
+.map-container {
+  flex: none;  /* Permite que el mapa no ocupe un ancho completo del flex */
+  height: 70vh; /* Reduce la altura en dispositivos móviles */
+  margin: 0 auto; /* Centra horizontalmente */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  padding: 10px; /* Añade un poco de espacio alrededor */
+}
+
+#map {
+  height: 60%; /* Mantiene el mapa con la altura total de la contenedora */
+  width: 100%;  /* Asegura que el mapa ocupe el 100% del contenedor */
+  position: relative; /* Resetea la posición para evitar problemas con el layout */
+}
+html{
+  height: 200px;
+  background-color: #28a74600;
+  overflow: hidden;
+}
+}
